@@ -9,7 +9,7 @@ const Form = () => {
     const {tg} = useTelegram();
 
     
-
+/*
     useEffect(() => {
         tg.MainButton.setParams({
             text: 'Відправити данні'
@@ -22,7 +22,7 @@ const Form = () => {
         } else {
             tg.MainButton.show();
         }
-    }, [country, street])
+    }, [country, street])  */
 
     const onChangeCountry = (e) => {
         setCountry(e.target.value)
