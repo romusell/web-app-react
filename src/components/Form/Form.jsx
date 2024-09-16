@@ -8,7 +8,22 @@ const Form = () => {
     const [subject, setSubject] = useState('physical');
     const {tg} = useTelegram();
 
+    const onSendData = useEffect( ()=>{
+             const data = {
+                country,
+                street,
+                subject
+             } 
+            tg.sendData(JSON.stringify(data)) 
+    },[country,street,subject]);
     
+    useEffect( ()=>{
+      tg.onEvent('mainButtonClicked', onSendData);
+      return () =>{
+        tg.onEvent('mainButtonClicked', onSendData);
+      }          
+    },[onSendData])
+
     useEffect(()=>{
      tg.ready(); 
      },[]);
