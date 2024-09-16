@@ -9,6 +9,9 @@ const Form = () => {
     const {tg} = useTelegram();
 
     
+    useEffect(()=>{
+     tg.ready(); 
+     },[]);
 
     useEffect(() => {
         tg.MainButton.setParams({
