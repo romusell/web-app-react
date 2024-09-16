@@ -17,9 +17,11 @@ const Form = ()=>{
   }, []);
 
   useEffect(()=>{
-      if(!country || !city){
+      if( !country || !city )
+      {
         tg.MainButton.hide();
-      } else {
+      } else 
+      {
         tg.MainButton.show();
       }
   },[country,city]);
