@@ -2,75 +2,61 @@ import React, { useEffect, useState } from "react";
 import "./Form.css";
 import { useTelegram } from "../../hooks/useTelegram";
 
-const Form = ()=>{
+const Form = () => {
+    const [country, setCountry] = useState('');
+    const [street, setStreet] = useState('');
+    const [subject, setSubject] = useState('physical');
+    const {tg} = useTelegram();
 
-  const [country, setCountry ] = useState();   
-  const [city, setCity] = useState();  
-  const [samthing, setSamthing] = useState();
-  const [subject, setSubject] = useState('physical');
-  const {tg}= useTelegram();
-  
-  useEffect (() =>{
-    tg.MainButton.setParams({
-        text: "Відправити данні"
-    },);
-  }, []);
+    
 
-  useEffect(()=>{
-      if( !country || !city )
-      {
-        tg.MainButton.hide();
-      } else 
-      {
-        tg.MainButton.show();
-      }
-  },[country,city]);
-  
- const onChangeCountry = (e) => {
-    setCountry(e.target.value);
-  };
+    useEffect(() => {
+        tg.MainButton.setParams({
+            text: 'Відправити данні'
+        })
+    }, [])
 
-  const  onChangeCity =(e)=>{
-    setCity(e.target.value);
-  };
+    useEffect(() => {
+        if(!street || !country) {
+            tg.MainButton.hide();
+        } else {
+            tg.MainButton.show();
+        }
+    }, [country, street])
 
-  const onChangeSamthing =(e)=>{
-    setSamthing(e.target.value);
-  };
+    const onChangeCountry = (e) => {
+        setCountry(e.target.value)
+    }
 
-  const onChangeSubject =(e)=>{
-    setSubject(e.target.value);
-  };
-    return(
-        <div className={'form'}>
-         <h3>Введіть ваши данні</h3>
+    const onChangeStreet = (e) => {
+        setStreet(e.target.value)
+    }
 
-         <input 
-            className={'input'} 
-            type='text' 
-            placeholder="{'Держава'}"
-            value={country}
-            onChange={onChangeCountry}
-        />
-         <input 
-            className={'input'} 
-            type='text' 
-            placeholder="{'Вулиця'}"
-            value={city}
-            onChange={onChangeCity}
+    const onChangeSubject = (e) => {
+        setSubject(e.target.value)
+    }
+
+    return (
+        <div className={"form"}>
+            <h3>В ведіть данні</h3>
+            <input
+                className={'input'}
+                type="text"
+                placeholder={'Країна'}
+                value={country}
+                onChange={onChangeCountry}
             />
-         <input 
-            className={'input'} 
-            type='text' 
-            placeholder="{'Щось'}"
-            value={samthing}
-            onChange={onChangeSamthing}
+            <input
+                className={'input'}
+                type="text"
+                placeholder={'Вулиця'}
+                value={street}
+                onChange={onChangeStreet}
             />
-         <select value={subject} onChange={onChangeSubject} className={'select'}>
-            <option value={'physical'}>Фіз. лице</option>
-            <option value={'legal'}>Юр. лице</option>
-            <option></option>   
-         </select>   
+            <select value={subject} onChange={onChangeSubject} className={'select'}>
+                <option value={'physical'}>Физ. лицє</option>
+                <option value={'legal'}>Юр. лицє</option>
+            </select>
         </div>
     );
 };
