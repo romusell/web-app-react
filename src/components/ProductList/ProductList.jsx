@@ -487,7 +487,7 @@ const ture = [
    };
 
 const ProductList = () =>{
-     const [addedItems, setAddedItems] = useEffect([]);
+     const [addedItems, setAddedItems] = useEffect([newItems]);
 
      const{tg} = useTelegram();
 
@@ -512,7 +512,7 @@ const ProductList = () =>{
      }
     return(
      <div className={'list'}>
-       {true.map(item => (
+       {ture.map(item => (
         <ProductItem
           ture={item}
           onAdd={onAdd}

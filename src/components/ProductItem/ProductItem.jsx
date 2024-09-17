@@ -4,7 +4,7 @@ import './ProductItem.css';
 
 const ProductItem = ({ture, className,onAdd}) => {
 
-    const onAddHandler = ()=>{
+    const onAddHandler = () =>{
         onAdd(ture);
     };
 
@@ -12,7 +12,6 @@ const ProductItem = ({ture, className,onAdd}) => {
     <div className={'ture' + className}>
          <div className={"img"}>{ture.picture}</div>
          <div className={"title"}>{ture.title}</div>
-         
          <div className={"description"}>{ture.description}</div>
          <div className={'price'}>
             <span>Ціна Єкскурсії <b>{ture.price}</b></span>
