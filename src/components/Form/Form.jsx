@@ -3,10 +3,7 @@ import "./Form.css";
 import { useTelegram } from "../../hooks/useTelegram";
 
 const Form = () => {
-   if(tg.initDataUnsafe?.user){
-    const user = tg.initDataUnsafe?.user;
-   }
-     
+   
     useEffect(()=>{
         tg.ready(); 
         },[]);
@@ -16,6 +13,7 @@ const Form = () => {
     const [street, setStreet] = useState('');
     const [subject, setSubject] = useState('physical');
     const {tg} = useTelegram();
+    const{user} = useTelegram();
 
     const onSendData = useCallback(() => {
         const data = {
