@@ -3,6 +3,12 @@ import "./Form.css";
 import { useTelegram } from "../../hooks/useTelegram";
 
 const Form = () => {
+
+    useEffect(()=>{
+        tg.ready(); 
+        },[]);
+
+
     const [country, setCountry] = useState('');
     const [street, setStreet] = useState('');
     const [subject, setSubject] = useState('physical');
@@ -20,13 +26,9 @@ const Form = () => {
     useEffect( ()=>{
       tg.onEvent('mainButtonClicked', onSendData);
       return () =>{
-        tg.onEvent('mainButtonClicked', onSendData);
+        tg.offEvent('mainButtonClicked', onSendData);
       }          
     },[onSendData])
-
-    useEffect(()=>{
-     tg.ready(); 
-     },[]);
 
     useEffect(() => {
         tg.MainButton.setParams({
