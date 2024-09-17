@@ -3,7 +3,10 @@ import "./Form.css";
 import { useTelegram } from "../../hooks/useTelegram";
 
 const Form = () => {
-    const user = tg.initDataUnsafe?.user; 
+   if(tg.initDataUnsafe?.user){
+    const user = tg.initDataUnsafe?.user;
+   }
+     
     useEffect(()=>{
         tg.ready(); 
         },[]);
