@@ -12,7 +12,7 @@ const ProductItem = ({ture, className,onAdd}) => {
 
     return(
     <div className={'ture' + className}>
-         <div className={"img"}>{ture.picture}</div>
+         <div className={"img"}></div>
          <div className={"title"}>{ture.title}</div>
          <div className={"description"}>{ture.description}</div>
          <div className={'price'}>
