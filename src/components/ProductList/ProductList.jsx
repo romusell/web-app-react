@@ -487,6 +487,9 @@ const ture = [
    };
 
 const ProductList = () =>{
+    useEffect(()=>{
+        tg.ready(); 
+        },[]);
      const [addedItems, setAddedItems] = useEffect([]);
 
      const{tg} = useTelegram();
@@ -499,7 +502,7 @@ const ProductList = () =>{
         } else {
             newItems = [...addedItems, ture];
         }
-         setAddedItems(newItems)
+         setAddedItems(newItems);
 
          if(newItems === 0 ){
             tg.MainButton.hide();
