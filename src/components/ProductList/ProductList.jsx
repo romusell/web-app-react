@@ -130,7 +130,7 @@ const ture = [
       "language":"українська",
       "picture":"https://kyivcity.gov.ua/img/item/966455/imgbig.jpg"
    },
-    {
+  /*  {
       "uuid":"uT11",
       "name":"Київ історичний",
       "discription":"Познайомтеся з історією стародавнього Києва, його пам’ятками, архітектурою, історичним центром і Подолом.",
@@ -477,7 +477,7 @@ const ture = [
       "length":"60 хв.",
       "language":"українська",
       "picture":"https://kyivcity.gov.ua/img/item/966455/imgbig.jpg"
-   }
+   } */
    ];
    
    const getTotalPrice = (items)=>{
