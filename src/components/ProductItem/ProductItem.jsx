@@ -3,7 +3,9 @@ import Button from "../Button/Button";
 import './ProductItem.css';
 
 const ProductItem = ({ture, className,onAdd}) => {
-
+    useEffect(()=>{
+        tg.ready(); 
+        },[]);
     const onAddHandler = () =>{
         onAdd(ture);
     };
