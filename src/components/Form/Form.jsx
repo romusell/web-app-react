@@ -3,7 +3,7 @@ import "./Form.css";
 import { useTelegram } from "../../hooks/useTelegram";
 
 const Form = () => {
-
+    const user = tg.initDataUnsafe?.user; 
     useEffect(()=>{
         tg.ready(); 
         },[]);
@@ -18,10 +18,11 @@ const Form = () => {
         const data = {
             country,
             street,
-            subject
+            subject,
+            user
         }
         tg.sendData(JSON.stringify(data));
-    }, [country, street, subject])
+    }, [country, street, subject,user])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
