@@ -487,7 +487,7 @@ const ture = [
    };
 
 const ProductList = () =>{
-     const [addedItems, setAddedItems] = useEffect();
+     const [addedItems, setAddedItems] = useEffect([]);
 
      const{tg} = useTelegram();
 
