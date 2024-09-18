@@ -2,26 +2,24 @@ import React from "react";
 import Button from "../Button/Button";
 import './ProductItem.css';
 
-const ProductItem = ({ture, className,onAdd}) => {
-    useEffect(()=>{
-        tg.ready(); 
-        },[]);
-    const onAddHandler = () =>{
-        onAdd(ture);
-    };
+const ProductItem = ({product, className, onAdd}) => {
 
-    return(
-    <div className={'ture' + className}>
-         <div className={"img"}></div>
-         <div className={"title"}>{ture.name}</div>
-         <div className={"description"}>{ture.discription}</div>
-         <div className={'price'}>
-            <span>Ціна Єкскурсії <b>{ture.price}</b></span>
-         </div>
-         <Button className={'add-btn'} onClick={onAddHandler}>
-           Додати в Кошик
-         </Button>          
-     </div>
+    const onAddHandler = () => {
+        onAdd(product);
+    }
+
+    return (
+        <div className={'product ' + className}>
+            <div className={'img'}/>
+            <div className={'title'}>{product.title}</div>
+            <div className={'description'}>{product.description}</div>
+            <div className={'price'}>
+                <span>Стоимость: <b>{product.price}</b></span>
+            </div>
+            <Button className={'add-btn'} onClick={onAddHandler}>
+                Добавить в корзину
+            </Button>
+        </div>
     );
 };
 
