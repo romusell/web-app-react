@@ -2,7 +2,7 @@ import React, { useEffect, useCallback, useState } from "react";
 import "./ProductList.css";
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from "../../hooks/useTelegram";
-import "./imgbig.jpg"
+
 
 const products = [
     {
@@ -16,7 +16,7 @@ const products = [
         length :"120 хв.",
         price: 1000, 
         language :"українська",
-        img :"imgbig.jpg"
+        img :"img"
    },
    {
      id :"uT2",
