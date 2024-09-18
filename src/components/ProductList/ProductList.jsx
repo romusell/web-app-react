@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import "./ProductList.css";
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from "../../hooks/useTelegram";
@@ -21,6 +21,7 @@ const getTotalPrice = (items = []) => {
 }
 
 const ProductList = () => {
+   
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId} = useTelegram();
 
