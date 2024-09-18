@@ -3,7 +3,7 @@ import "./ProductList.css";
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from "../../hooks/useTelegram";
 
-const ture = [
+ /*const data = [
       {
          "uuid":"uT1",
          "name":"Провулками київського Кудрявця",
@@ -129,8 +129,8 @@ const ture = [
       "length":"120 хв.",
       "language":"українська",
       "picture":"https://kyivcity.gov.ua/img/item/966455/imgbig.jpg"
-   },
-  /*  {
+   }
+    {
       "uuid":"uT11",
       "name":"Київ історичний",
       "discription":"Познайомтеся з історією стародавнього Києва, його пам’ятками, архітектурою, історичним центром і Подолом.",
@@ -477,9 +477,37 @@ const ture = [
       "length":"60 хв.",
       "language":"українська",
       "picture":"https://kyivcity.gov.ua/img/item/966455/imgbig.jpg"
-   } */
-   ];
+   } 
+   ];*/
+   const ture =[
+    {
+        uuid: "uT1",
+        name: "Провулками київського Кудрявця",
+        discription :"Дізнайтеся про літописні місця Києва та твори багатьох видатних киян – архітекторів, художників, письменників і акторів, які мешкали в цій місцевості у різні часи.",
+        type :"withHearing",
+        type1 :"withVisual",
+        type2 :"limitedMobility",
+        BarrierFree :"Так",
+        price : 1000,
+        length :"120 хв.",
+        language :"українська",
+        picture :"https://kyivcity.gov.ua/img/item/966455/imgbig.jpg"
+    },{
+        uuid :"uT2",
+        name :"Прогулянка театральним Києвом",
+        discription:"Ви дізнаєтеся, як і коли виникли театральні традиції Києва, про перші театри, їхніх корифеїв і сучасних майстрів сцени.",
+         type :"withHearing",
+         type1 :"",
+         type2 :"",
+         price : 1000,
+         BarrierFree :"Так",
+         length :"120 хв.",
+         language :"українська",
+         picture :"https://kyivcity.gov.ua/img/item/966455/imgbig.jpg"
+    }
+   ]
    
+
    const getTotalPrice = (items)=>{
     return items.reduse((acc, item) =>{
         return acc += item.price
