@@ -2,7 +2,8 @@ import React, { useEffect, useCallback, useState } from "react";
 import "./ProductList.css";
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from "../../hooks/useTelegram";
-
+const telegram = window.Telegram.WebApp;
+const userId = telegram.initDataUnsafe?.user;
 
 const products = [
     {
@@ -166,7 +167,7 @@ const getTotalPrice = (items = []) => {
 const ProductList = () => {
    
     const [addedItems, setAddedItems] = useState([]);
-    const {tg,queryId,userId} = useTelegram();
+    const {tg,queryId} = useTelegram();
     
     const onSendData = useCallback(() => {
         const data = {
