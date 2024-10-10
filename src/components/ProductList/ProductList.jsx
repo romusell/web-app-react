@@ -3,7 +3,7 @@ import "./ProductList.css";
 import ProductItem from "../ProductItem/ProductItem";
 import { useTelegram } from "../../hooks/useTelegram";
 const telegram = window.Telegram.WebApp;
-const userId = telegram.initDataUnsafe?.user;
+const userId = telegram.initDataUnsafe.user;
 
 const products = [
     {
